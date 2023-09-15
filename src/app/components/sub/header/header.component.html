@@ -1,0 +1,52 @@
+
+<div class="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodycolor px-4">
+    <div class="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
+        <div>
+            <img class="w-14" src="../../../../assets/img/Fichier 6logo.png"/>
+        </div>
+        <div class="hidden mdl:inline-flex items-center gap-7">
+            <ul class="flex text-[15px] gap-7">
+                <a (click)="zeA1.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>ZeA1</li>
+                </a>
+                <a (click)="theInside.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>Ze Inside</li>
+                </a>
+                <a (click)="bigEvents.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>Big Event</li>
+                </a>
+                <a (click)="flashBack.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>Flash Back</li>
+                </a>
+                <a (click)="podcast.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>Podcast</li>
+                </a>
+                <a (click)="contactusEvent.emit()" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+            <!-- <a (click)="loginEvent.emit()">
+                <button class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                hover:bg-hoverColor duration-300">
+                    Login
+                </button>
+            </a> -->
+        </div>
+        <!--  For small screen  -->
+        <div class="w-6 h-5 flex flex-col justify-between items-center mdl:hidden
+        text-4xl text-textGreen cursor-pointer overflow-hidden group gap-2">
+            <span class="w-full h-[2px] bg-textBlue inline-flex transform group-hover:translate-x-2
+            transition-all ease-in-out duration-300"></span>
+            <span class="w-full h-[2px] bg-textBlue inline-flex transform translate-x-3 
+            group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
+            <span class="w-full h-[2px] bg-textBlue inline-flex transform translate-x-1 
+            group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
+        </div>
+    </div>
+</div>

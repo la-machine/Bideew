@@ -5,8 +5,9 @@
     (contactusEvent)="showComponent('contactus')"
     (flashBack)="showComponent('flash-back')"></app-header>
     <app-the-inside *ngIf="componentToShow == 'the-inside'"></app-the-inside>
-    <app-ze-a1 *ngIf="componentToShow == 'ze-a1'"></app-ze-a1>
+    <app-ze-a1 *ngIf="componentToShow == 'ze-a1'" (contactusEvent)="showComponent('contactus')"></app-ze-a1>
     <app-podcast *ngIf="componentToShow == 'podcast'"></app-podcast>
     <app-flash-back *ngIf="componentToShow == 'flash-back'"></app-flash-back>
     <app-contact-us *ngIf="componentToShow == 'contactus'"></app-contact-us>
+
 <app-footer></app-footer>

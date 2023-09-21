@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +13,8 @@ export class HeaderComponent {
   @Output() contactusEvent = new EventEmitter();
   @Output() theInside = new EventEmitter();
   @Output() bigEvents = new EventEmitter();
+
+  activeLink: string ='';
 
   toogleNav = ()=>{
     if (document.getElementById("nav")?.classList.contains("slide-in")){

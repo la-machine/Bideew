@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class ContentComponent {
 
   componentToShow: string = "ze-a1";
+  // activeLink: string = '';
 
   constructor(){}
 
   showComponent(componentToShow: string): void {
+    // this.activeLink = componentToShow;
     this.componentToShow = componentToShow;
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ze-a1',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./ze-a1.component.scss']
 })
 export class ZeA1Component {
+
+  @Output() contactusEvent = new EventEmitter();
 
 }

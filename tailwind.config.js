@@ -38,6 +38,7 @@ module.exports = {
         textBlue:"#173899",
         textLight:"#ccd6f6",
         textDark:"#8892b0",
+        cobtact:"#dddddd",
         hoverColor:"rgba(100,255,218,0.1)",
       }
     },

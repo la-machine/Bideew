@@ -1,0 +1,34 @@
+<app-sidbar></app-sidbar>
+<div class="p-4 sm:ml-64">
+    <div class="p-4 rounded-lg mt-14">
+        <div class="container mx-auto mt-5">
+            <form (submit)="submitForm()" #interviewForm="ngForm" enctype="multipart/form-data">
+            <!-- File Inputs for Images, Audio, and Video -->
+            <div class="mb-4">
+                <label for="img" class="block text-sm font-medium text-gray-700">Interview Image</label>
+                <input type="file" id="img" name="img" accept="image/*" (change)="onImageSelected($event)" required>
+            </div>
+        
+            <div class="mb-4">
+                <label for="audio" class="block text-sm font-medium text-gray-700">Interview Audio</label>
+                <input type="file" id="audio" name="audio" accept="audio/*" (change)="onAudioSelected($event)" required>
+            </div>
+            <!-- Title and Description -->
+            <div class="mb-4">
+                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" id="title" name="title" [(ngModel)]="title" required>
+            </div>
+        
+            <div class="mb-4">
+                <label for="desc" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea id="desc" name="desc" [(ngModel)]="desc" required></textarea>
+            </div>
+        
+            <!-- Submit Button -->
+            <div class="mt-4">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

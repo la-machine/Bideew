@@ -1,0 +1,32 @@
+<app-sidbar></app-sidbar>
+<div class="p-4 sm:ml-64">
+    <div class="p-4 rounded-lg mt-14">
+        <div class="container">
+        <div class="card m-5 p-3">
+            <div class="card-body">
+                <table class="table-auto w-full border border-collapse border-gray-800">
+                    <thead>
+                        <tr class="bg-gray-200">
+                                <th class="border px-4 py-2">ID</th>
+                            <th class="border px-4 py-2">Title</th>
+                            <th class="border px-4 py-2">Podcast Img</th>
+                            <th class="border px-4 py-2">Description</th>
+                            <th class="border px-4 py-2">Phone number</th>
+                            <th class="border px-4 py-2">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let podcast of allPodcasts" class="bg-white">
+                            <td class="border px-4 py-2">{{ podcast.id }}</td>
+                            <td class="border px-4 py-2">{{ podcast.title }}</td>
+                            <td class="border px-4 py-2"><img [src]="getImageUrl(podcast.img)" alt="Podcast Image" class="w-16 h-16 object-cover rounded-full">></td>
+                            <td class="border px-4 py-2">{{ podcast.desc }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ZeinsideService } from 'src/app/service/zeinside.service';
 
-const fileUrl = 'http://localhost:8080/api/files'
+const fileUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/files'
 
 @Component({
   selector: 'app-the-inside',
@@ -18,7 +18,7 @@ export class TheInsideComponent {
   openVideoInIframe() {
     this.showIframe = true;
   }
-  
+
   ngOnInit() {
     this.getPodcast();
   }

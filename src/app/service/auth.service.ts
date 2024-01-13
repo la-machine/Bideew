@@ -18,7 +18,7 @@ export class AuthService {
         // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
       }),}
       console.log("From the authService" + request.email)
-       return this.http.post('http://localhost:8080/api/authenticate', request, httpOptions).pipe(
+       return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/authenticate', request, httpOptions).pipe(
         catchError((error) => {
           // Handle authentication error here
           return throwError('Invalid credentials'); // Set your custom error message
@@ -32,7 +32,7 @@ export class AuthService {
         "Content-Type":"application/json",
         "Authorization": "Bearer " + this.userService.getAuthToken(),
       }),}
-    return this.http.get('http://localhost:8080/api/user/all-user', httpOptions).pipe(
+    return this.http.get('https://bideew-c7865089e3a7.herokuapp.com/api/user/all-user', httpOptions).pipe(
         catchError((error) => {
           return throwError('Error fetching users');
         })

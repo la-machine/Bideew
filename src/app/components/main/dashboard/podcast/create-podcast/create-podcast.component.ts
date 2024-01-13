@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 import { PodcastRequest } from 'src/app/Class/PodcastRequest';
 import { FileService } from 'src/app/service/file.service';
 import { PodcastService } from 'src/app/service/podcast.service';
@@ -15,7 +16,7 @@ export class CreatePodcastComponent {
   title!: string;
   desc!: string;
   
-  constructor(private podcasService: PodcastService, private fileService : FileService) {}
+  constructor(private podcasService: PodcastService, private router : Router) {}
   onImageSelected(event: any) {
     this.imageFile = event.target.files[0];
   }
@@ -40,6 +41,7 @@ export class CreatePodcastComponent {
     this.podcasService.createPodcast(this.title, this.desc, this.imageFile, this.audioFile).subscribe(
       response => {
         // Handle the success response
+        this.router.navigate(['/dashboard/index-podcast'])
         console.log('Podcast created successfully!', response);
         // Optionally, you can reset the form here
       },

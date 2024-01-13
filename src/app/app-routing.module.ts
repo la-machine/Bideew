@@ -13,6 +13,9 @@ import { IndexBigeventComponent } from './components/main/dashboard/bigevent/ind
 import { CreatePodcastComponent } from './components/main/dashboard/podcast/create-podcast/create-podcast.component';
 import { DashbordContentComponent } from './components/main/dashboard/dashbord-content/dashbord-content.component';
 import { authGuard } from './auth.guard';
+import { EditPodcastComponent } from './components/main/dashboard/podcast/edit-podcast/edit-podcast.component';
+import { CreateBigeventComponent } from './components/main/dashboard/bigevent/create-bigevent/create-bigevent.component';
+import { CreateZeInsideComponent } from './components/main/dashboard/ze-inside/create-ze-inside/create-ze-inside.component';
 
 const routes: Routes = [
   { path: '', component: ContentComponent },
@@ -23,11 +26,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard', component: DashboardComponent, canActivateChild:[authGuard], children: [
-      { path: '', component: DashbordContentComponent },
+      { path: 'index', component: DashbordContentComponent },
       { path: 'index-podcast', component: IndexPodcastComponent },
       { path: 'create-podcast', component: CreatePodcastComponent },
-      { path: 'index-ze-inside', component: IndexZeInsideComponent },
+      { path: 'edit-podcast/:title', component: EditPodcastComponent },
+      { path: 'index-zeinside', component: IndexZeInsideComponent },
+      { path: 'add-zeinside', component: CreateZeInsideComponent },
       { path: 'index-bigevent', component: IndexBigeventComponent },
+      { path: 'add-bigevent', component: CreateBigeventComponent },
     ]
   },
 

@@ -8,6 +8,10 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./sidbar.component.scss']
 })
 export class SidbarComponent implements OnInit{
+  showPodcast = false;
+  showEvent = false;
+  showFlashback = false;
+  showZeInside = false;
   isLoggedIn: any;
   role: any;
   showCitizenBoard: boolean = false;
@@ -44,4 +48,5 @@ export class SidbarComponent implements OnInit{
     this.userService.clear()
     this.router.navigate(['']);
   }
+
 }

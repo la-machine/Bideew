@@ -13,6 +13,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { DashbordContentComponent } from './dashbord-content/dashbord-content.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './dashboard.component';
+import { EditPodcastComponent } from './podcast/edit-podcast/edit-podcast.component';
 
 
 
@@ -26,7 +27,8 @@ import { DashboardComponent } from './dashboard.component';
     IndexBigeventComponent,
     SidbarComponent,
     DashboardComponent,
-    DashbordContentComponent
+    DashbordContentComponent,
+    EditPodcastComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { UserService } from './user.service';
 import { PodcastResponse } from '../Class/PodcastResponse';
 import { PodcastRequest } from '../Class/PodcastRequest';
@@ -9,6 +9,8 @@ import { PodcastRequest } from '../Class/PodcastRequest';
   providedIn: 'root'
 })
 export class PodcastService {
+
+  private apiUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/user'
 
   constructor(private http: HttpClient, private userservice: UserService) { }
 
@@ -29,29 +31,32 @@ export class PodcastService {
 
     // console.log(formData);
 
-    return this.http.post('http://localhost:8080/api/user/addpodcast', formData, httpOptions).pipe(
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/user/addpodcast', formData, httpOptions).pipe(
       catchError((error) => {
         return throwError('Invalid credentials'); // Set your custom error message
       })
     );
   }
 
+  getPodcast(podcastTitle:string){
+    return this.http.get(`${this.apiUrl}/find/${podcastTitle}`).pipe();
+  }
+
   getAllPodcasts() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + this.userservice.getAuthToken(), // If you have authentication
-      }),
-    }
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     "Content-Type": "application/json",
+    //     "Authorization": "Bearer " + this.userservice.getAuthToken(), // If you have authentication
+    //   }),
+    // }
 
-    return this.http.get<PodcastResponse[]>('http://localhost:8080/api/user/podcasts', httpOptions).pipe();
+    return this.http.get<PodcastResponse[]>('https://bideew-c7865089e3a7.herokuapp.com/api/user/podcasts').pipe();
   }
 
-  fileToBlob(file:File){
-    const fileBlob = file.slice(0, file.size, file.type);
-    const newFile = new File([fileBlob], file.name, { type: file.type });
-    return newFile;
+  deletePodcast(podcastTitle: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/delete/${podcastTitle}`);
   }
+
 
   // *#9900#, *#2663 , *#12580*369#
 }

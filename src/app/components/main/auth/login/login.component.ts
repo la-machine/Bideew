@@ -39,7 +39,7 @@ export class LoginComponent {
       this.userAuthRespone.setAuthUser(user);
       this.userAuthRespone.setAuthToken(res.token);
       console.log(res.token);
-        this.router.navigate(['dashboard']);     
+        this.router.navigate(['dashboard/index']);     
 		},
       (error) => {
         this.errorMessage = error;

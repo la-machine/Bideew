@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ZeinsideService } from 'src/app/service/zeinside.service';
 
 const fileUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/files'
@@ -8,8 +8,8 @@ const fileUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/files'
   templateUrl: './the-inside.component.html',
   styleUrls: ['./the-inside.component.scss']
 })
-export class TheInsideComponent {
- interviewResponse: any[]=[];
+export class TheInsideComponent implements OnInit{
+ allInterviews: any[]=[];
 
  constructor(private interviewService: ZeinsideService) {}
 
@@ -26,7 +26,7 @@ export class TheInsideComponent {
   getPodcast() {
     this.interviewService.getAllInterviews().subscribe(
       (response) => {
-        this.interviewResponse = response.map(podcast => ({
+        this.allInterviews = response.map(podcast => ({
           ...podcast,
           img: `${fileUrl}/${podcast.img}`,
           audio: `${fileUrl}/${podcast.audio}`,

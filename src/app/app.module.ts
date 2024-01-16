@@ -16,6 +16,7 @@ import { UserModalComponent } from './components/main/user-modal/user-modal.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { DashboardModule } from './components/main/dashboard/dashboard.module';
+import { BigeventComponent } from './components/main/bigevent/bigevent.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DashboardModule } from './components/main/dashboard/dashboard.module';
     ContentComponent,
     LoginComponent,
     UserModalComponent,
+    BigeventComponent,
   ],
   imports: [
     BrowserModule,

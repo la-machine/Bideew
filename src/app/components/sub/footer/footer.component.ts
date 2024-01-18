@@ -14,10 +14,11 @@ export class FooterComponent {
   constructor(private authService: AuthService){}
 
   submitForm(){
-    console.log("This is the test  "+ this.email);
-    const subcribe : SubscribeRequest = new SubscribeRequest();
-    subcribe.email = this.email;
-    this.authService.addSubscriber(subcribe).subscribe( res =>{
+    
+    const subscribe : SubscribeRequest = new SubscribeRequest();
+    subscribe.email = this.email;
+    console.log("This is the test  "+ subscribe.email);
+    this.authService.addSubscriber(subscribe).subscribe( res =>{
       console.log(res);
     })
   }

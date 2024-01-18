@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SubscribeRequest } from 'src/app/Class/SubscribeRequest';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class FooterComponent {
   constructor(private authService: AuthService){}
 
   submitForm(){
-    this.authService.addSubscriber(this.email).subscribe( res =>{
+    console.log("This is the test  "+ this.email);
+    const subcribe : SubscribeRequest = new SubscribeRequest();
+    subcribe.email = this.email;
+    this.authService.addSubscriber(subcribe).subscribe( res =>{
       console.log(res);
     })
   }

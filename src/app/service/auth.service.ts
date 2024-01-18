@@ -35,8 +35,8 @@ export class AuthService {
         "Content-Type":"application/json",
         // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
       }),}
-      // this.subscribe.email=email;
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',email,httpOptions).pipe();
+      this.subscribe.email=email;
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe();
   }
 
   getUsers(){

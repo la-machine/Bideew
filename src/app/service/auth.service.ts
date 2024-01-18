@@ -26,6 +26,10 @@ export class AuthService {
        );
   }
 
+  addSubscriber(email:string){
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/authenticate',email).pipe();
+  }
+
   getUsers(){
     const httpOptions = {
       headers: new HttpHeaders({

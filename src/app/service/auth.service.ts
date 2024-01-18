@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { AuthRequest } from '../Class/AuthRequest';
 import { UserService } from './user.service';
+import { SubscribeRequest } from '../Class/SubscribeRequest';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  subscribe !: SubscribeRequest;
 
   constructor(private http: HttpClient, private userService : UserService) { }
 
@@ -27,7 +30,13 @@ export class AuthService {
   }
 
   addSubscriber(email:string){
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',email).pipe();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type":"application/json",
+        // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
+      }),}
+      this.subscribe.email=email;
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe();
   }
 
   getUsers(){

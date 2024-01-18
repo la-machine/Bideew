@@ -14,11 +14,9 @@ export class FooterComponent {
   constructor(private authService: AuthService){}
 
   submitForm(){
-    
-    const subscribe : SubscribeRequest = new SubscribeRequest();
-    subscribe.email = this.email;
-    console.log("This is the test  "+ subscribe.email);
-    this.authService.addSubscriber(subscribe).subscribe( res =>{
+    console.log("This is the test  "+ this.email);
+    const subcribe : SubscribeRequest = new SubscribeRequest();
+    this.authService.addSubscriber(this.email).subscribe( res =>{
       console.log(res);
     })
   }

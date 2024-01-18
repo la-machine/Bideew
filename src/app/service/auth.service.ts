@@ -29,7 +29,7 @@ export class AuthService {
        );
   }
 
-  addSubscriber(email:SubscribeRequest){
+  addSubscriber(email:string){
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type":"application/json",

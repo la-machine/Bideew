@@ -1,6 +1,6 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { AuthRequest } from '../Class/AuthRequest';
 import { UserService } from './user.service';
 import { SubscribeRequest } from '../Class/SubscribeRequest';
@@ -10,7 +10,7 @@ import { SubscribeRequest } from '../Class/SubscribeRequest';
 })
 export class AuthService {
 
-  subscribe !: SubscribeRequest;
+  subscribe : SubscribeRequest = new SubscribeRequest();
 
   constructor(private http: HttpClient, private userService : UserService) { }
 
@@ -29,14 +29,20 @@ export class AuthService {
        );
   }
 
-  addSubscriber(email:string){
+  addSubscriber(email:string):Observable<any>{
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type":"application/json",
         // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
       }),}
       this.subscribe.email=email;
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe();
+      console.log("testing my service " + email)
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe(
+      catchError((error) => {
+        console.error('Error in addSubscriber:', error);
+        return throwError('Error in addSubscriber'); // You can customize this error message
+      })
+    );
   }
 
   getUsers(){

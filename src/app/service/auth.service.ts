@@ -45,6 +45,15 @@ export class AuthService {
     );
   }
 
+  sendMessage(name:string, email:string, message:string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type":"application/json",
+        // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
+      }),}
+    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/contact',{name,email,message},httpOptions).pipe();
+  }
+
   getUsers(){
     const httpOptions = {
       headers: new HttpHeaders({

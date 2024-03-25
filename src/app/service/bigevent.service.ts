@@ -9,7 +9,7 @@ import { BigEventResponse } from '../Class/BigEventResponse';
 })
 export class BigeventService {
 
-  private apiUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/user'
+  private apiUrl = 'https://bideew-2e4c9e77133a.herokuapp.com//api/user'
 
   constructor(private http: HttpClient, private userservice: UserService) { }
 
@@ -29,7 +29,7 @@ export class BigeventService {
 
     // console.log(formData);
 
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/bigevent/addEvent', formData, httpOptions).pipe();
+    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/bigevent/addEvent', formData, httpOptions).pipe();
   }
 
   getBigevent(podcastTitle:string){
@@ -44,7 +44,7 @@ export class BigeventService {
     //   }),
     // }
 
-    return this.http.get<BigEventResponse[]>('https://bideew-c7865089e3a7.herokuapp.com/api/bigevent/all').pipe();
+    return this.http.get<BigEventResponse[]>('https://bideew-2e4c9e77133a.herokuapp.com/api/bigevent/all').pipe();
   }
 
   deleteEvent(podcastTitle: string): Observable<void> {

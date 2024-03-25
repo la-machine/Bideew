@@ -29,7 +29,7 @@ export class ZeinsideService {
 
     // console.log(formData);
 
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/zeinside/addInterview', formData, httpOptions).pipe(
+    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/zeinside/addInterview', formData, httpOptions).pipe(
       catchError((error) => {
         return throwError('Invalid credentials'); // Set your custom error message
       })
@@ -42,7 +42,7 @@ export class ZeinsideService {
 
   getAllInterviews() {
 
-    return this.http.get<ZeinsideResponse[]>('https://bideew-c7865089e3a7.herokuapp.com/api/zeinside/all').pipe();
+    return this.http.get<ZeinsideResponse[]>('https://bideew-2e4c9e77133a.herokuapp.com/api/zeinside/all').pipe();
   }
 
   // deletePodcast(podcastTitle: string): Observable<void> {

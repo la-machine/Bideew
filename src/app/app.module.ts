@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ZeA1Component } from './components/main/ze-a1/ze-a1.component';
@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { DashboardModule } from './components/main/dashboard/dashboard.module';
 import { BigeventComponent } from './components/main/bigevent/bigevent.component';
+import { TimeoutInterceptor } from './service/timeoutInterceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,13 @@ import { BigeventComponent } from './components/main/bigevent/bigevent.component
     DashboardModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TimeoutInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

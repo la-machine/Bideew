@@ -21,7 +21,7 @@ export class AuthService {
         // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
       }),}
       console.log("From the authService" + request.email)
-       return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/authenticate', request, httpOptions).pipe(
+       return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/authenticate', request, httpOptions).pipe(
         catchError((error) => {
           // Handle authentication error here
           return throwError('Invalid credentials'); // Set your custom error message
@@ -37,7 +37,7 @@ export class AuthService {
       }),}
       this.subscribe.email=email;
       console.log("testing my service " + email)
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe(
+    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/subscribe',this.subscribe,httpOptions).pipe(
       catchError((error) => {
         console.error('Error in addSubscriber:', error);
         return throwError('Error in addSubscriber'); // You can customize this error message
@@ -51,7 +51,7 @@ export class AuthService {
         "Content-Type":"application/json",
         // "Authorization": "Bearer " + this.getAuthToken(), // If you have authentication
       }),}
-    return this.http.post('https://bideew-c7865089e3a7.herokuapp.com/api/contact',{name,email,message},httpOptions).pipe();
+    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/contact',{name,email,message},httpOptions).pipe();
   }
 
   getUsers(){
@@ -60,7 +60,7 @@ export class AuthService {
         "Content-Type":"application/json",
         "Authorization": "Bearer " + this.userService.getAuthToken(),
       }),}
-    return this.http.get('https://bideew-c7865089e3a7.herokuapp.com/api/user/all-user', httpOptions).pipe(
+    return this.http.get('https://bideew-2e4c9e77133a.herokuapp.com/api/user/all-user', httpOptions).pipe(
         catchError((error) => {
           return throwError('Error fetching users');
         })

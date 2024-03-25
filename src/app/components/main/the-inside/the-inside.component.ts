@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ZeinsideService } from 'src/app/service/zeinside.service';
 
-const fileUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/files'
+const fileUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/files'
 
 @Component({
   selector: 'app-the-inside',

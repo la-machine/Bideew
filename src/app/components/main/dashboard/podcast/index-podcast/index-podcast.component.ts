@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
 import { Router } from '@angular/router';
 import { PodcastService } from 'src/app/service/podcast.service';
 
-const fileUrl = 'https://bideew-c7865089e3a7.herokuapp.com/api/files'
+const fileUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/files'
 
 @Component({
   selector: 'app-index-podcast',

@@ -54,9 +54,8 @@ export class PodcastService {
   }
 
   deletePodcast(podcastTitle: string): Observable<void> {
+    console.log('Deleting podcast:', podcastTitle);
     return this.http.delete<any>(`${this.apiUrl}/delete/${podcastTitle}`);
   }
 
-
-  // *#9900#, *#2663 , *#12580*369#
 }

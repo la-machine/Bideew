@@ -54,7 +54,7 @@ export class PodcastService {
   }
 
   deletePodcast(podcastTitle: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/delete/${podcastTitle}`);
+    return this.http.delete<any>(`${this.apiUrl}/delete/${podcastTitle}`);
   }
 
 

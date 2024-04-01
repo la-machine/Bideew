@@ -42,31 +42,31 @@ export class IndexPodcastComponent implements AfterViewInit{
     );
   }
 
+  isModalOpen = false;
+  podcastToDeleteTitle!: string;
+
+  openModal(podcastTitle: string): void {
+    this.podcastToDeleteTitle = podcastTitle;
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+  }
+
+  deletePodcast(): void {
+    // Perform delete operation
+    this.podcastService.deletePodcast(this.podcastToDeleteTitle).pipe().subscribe(res =>{
+      console.log(res);
+    })
+    console.log('Deleting podcast:', this.podcastToDeleteTitle);
+    this.closeModal();
+  }
+
   
   editPodcast(title: string): void {
     this.route.navigate(['/dashboard/edit-podcast', title])
   }
 
-  deletePodcast(podcastTitle: string): void {
-    // const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-    //   width: '300px',
-    //   data: { message: 'Are you sure you want to delete this podcast?' }
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.podcastService.deletePodcast(podcastTitle).subscribe(
-    //       () => {
-    //         // Podcast deleted successfully, reload data
-    //         this.loadPodcasts();
-    //       },
-    //       (error) => {
-    //         console.error('Error deleting podcast:', error);
-    //         // Handle error, show a message, etc.
-    //       }
-    //     );
-    //   }
-    // });
-  }
 
 }

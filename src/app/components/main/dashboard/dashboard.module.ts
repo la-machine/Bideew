@@ -14,6 +14,7 @@ import { DashbordContentComponent } from './dashbord-content/dashbord-content.co
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './dashboard.component';
 import { EditPodcastComponent } from './podcast/edit-podcast/edit-podcast.component';
+import { ConfirmationmodalComponent } from './confirmationmodal/confirmationmodal.component';
 
 
 
@@ -28,13 +29,17 @@ import { EditPodcastComponent } from './podcast/edit-podcast/edit-podcast.compon
     SidbarComponent,
     DashboardComponent,
     DashbordContentComponent,
-    EditPodcastComponent
+    EditPodcastComponent,
+    ConfirmationmodalComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     DataTablesModule,
     FormsModule,
+  ],
+  exports: [
+    ConfirmationmodalComponent // Export ConfirmationmodalComponent if you want to use it outside the DashboardModule
   ]
 })
 export class DashboardModule { }

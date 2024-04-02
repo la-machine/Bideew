@@ -58,8 +58,11 @@ export class IndexPodcastComponent implements AfterViewInit{
     // Perform delete operation
     this.podcastService.deletePodcast(this.podcastToDeleteTitle).pipe().subscribe(res =>{
       console.log(res);
+      this.loadPodcasts();
+    } error => {
+      console.log("error deleting the podcast");
+      
     })
-    console.log('Deleting podcast:', this.podcastToDeleteTitle);
     this.closeModal();
   }
 

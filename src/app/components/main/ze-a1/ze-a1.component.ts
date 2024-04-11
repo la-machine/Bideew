@@ -7,6 +7,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ZeA1Component {
 
-  @Output() contactusEvent = new EventEmitter();
-
 }

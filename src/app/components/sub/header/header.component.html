@@ -6,27 +6,27 @@
         </div>
         <div class="hidden mdl:inline-flex items-center gap-7">
             <ul class="flex text-[15px] gap-7">
-                <a (click)="zeA1.emit()" [ngClass]="{ 'active-link': activeLink === 'ze-a1' }" class="flex items-center gap-1 font-medium
+                <a routerLink="/ze-a1" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                 text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>ZeA1</li>
                 </a>
-                <a (click)="theInside.emit()" [ngClass]="{ 'active-link': activeLink === 'the-inside' }" class="flex items-center gap-1 font-medium
-                text-textBlue hover:text-white cursor-pointer duration-300 nav-link active-link">
+                <a  routerLink="/the-inside" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
+                text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>Ze Inside</li>
                 </a>
-                <a (click)="bigEvents.emit()" [ngClass]="{ 'active-link': activeLink === 'bigEvents' }" class="flex items-center gap-1 font-medium
+                <a routerLink="/bigevent" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                 text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>Big Event</li>
                 </a>
-                <a (click)="flashBack.emit()" [ngClass]="{ 'active-link': activeLink === 'flash-back' }" class="flex items-center gap-1 font-medium
+                <a routerLink="/flashBack" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                 text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>Flash Back</li>
                 </a>
-                <a (click)="podcast.emit()" [ngClass]="{ 'active-link': activeLink === 'podcast' }" class="flex items-center gap-1 font-medium
+                <a routerLink="/podcast" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                 text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>Podcast</li>
                 </a>
-                <a (click)="contactusEvent.emit()" [ngClass]="{ 'active-link': activeLink === 'contactus' }" class="flex items-center gap-1 font-medium
+                <a routerLink="/contact" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                 text-textBlue hover:text-white cursor-pointer duration-300 nav-link">
                     <li>Contact Us</li>
                 </a>
@@ -62,28 +62,28 @@
           </button>
                 <div class="flex flex-col items-center gap-7">
                     <ul class="flex flex-col text-base gap-7">
-                        <a (click)="zeA1.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/ze-a1" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>ZeA1</li>
                         </a>
                         
-                        <a (click)="theInside.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/the-inside" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>Ze Inside</li>
                         </a>
-                        <a (click)="bigEvents.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/bigevent" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>Big Event</li>
                         </a>
-                        <a (click)="flashBack.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/flashBack" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>Flash Back</li>
                         </a>
-                        <a (click)="podcast.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/podcast" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>Podcast</li>
                         </a>
-                        <a (click)="contactusEvent.emit()" class="flex items-center gap-1 font-medium
+                        <a routerLink="/contact" routerLinkActive="text-white" class="flex items-center gap-1 font-medium
                             text-textBlue hover:text-textGreen cursor-pointer duration-300 nav-link">
                             <li>Contact us</li>
                         </a>

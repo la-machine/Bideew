@@ -8,13 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderComponent {
 
   showMenu = false;
-  
-  @Output() zeA1 = new EventEmitter();
-  @Output() flashBack = new EventEmitter();
-  @Output() podcast = new EventEmitter();
-  @Output() contactusEvent = new EventEmitter();
-  @Output() theInside = new EventEmitter();
-  @Output() bigEvents = new EventEmitter();
 
   activeLink: string ='';
 

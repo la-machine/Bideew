@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContentComponent } from './components/main/content/content.component';
 import { TheInsideComponent } from './components/main/the-inside/the-inside.component';
 import { FlashBackComponent } from './components/main/flash-back/flash-back.component';
 import { ContactUsComponent } from './components/main/contact-us/contact-us.component';
@@ -16,11 +15,15 @@ import { authGuard } from './auth.guard';
 import { EditPodcastComponent } from './components/main/dashboard/podcast/edit-podcast/edit-podcast.component';
 import { CreateBigeventComponent } from './components/main/dashboard/bigevent/create-bigevent/create-bigevent.component';
 import { CreateZeInsideComponent } from './components/main/dashboard/ze-inside/create-ze-inside/create-ze-inside.component';
+import { ZeA1Component } from './components/main/ze-a1/ze-a1.component';
+import { BigeventComponent } from './components/main/bigevent/bigevent.component';
 
 const routes: Routes = [
-  { path: '', component: ContentComponent },
+  { path: '', redirectTo: '/ze-ai', pathMatch: 'full' },
+  { path: 'ze-a1', component: ZeA1Component },
   { path: 'the-inside', component: TheInsideComponent },
   { path: 'flashBack', component: FlashBackComponent },
+  { path: 'bigevent', component: BigeventComponent},
   { path: 'contact', component: ContactUsComponent },
   { path: 'podcast', component: PodcastComponent },
   { path: 'login', component: LoginComponent },

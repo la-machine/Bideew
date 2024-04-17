@@ -11,6 +11,8 @@ const fileUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/files'
 })
 export class PodcastComponent implements OnInit {
   podcastResponses: any[] = [];
+  showFullContent: boolean = false;
+
 
   constructor(private podcastService: PodcastService) {}
 

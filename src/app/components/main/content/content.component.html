@@ -5,23 +5,17 @@
         <!-- <img class="mx-auto h-1/2" src="../../../../assets/img/transfer.png"/> -->
         <img class="mx-auto h-1/2" [src]="podcastResponse.img" />
         <h3 class="text-bodycolor items-center text-2xl font-semibold">{{ podcastResponse.title }}</h3>
+        <p class="text-white text-[8]">
+            {{ podcastResponse.desc }}
+        </p>
         <div class="audio-container">
             <audio controls class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
                         hover:bg-hoverColor duration-300">
                 <source [src]="podcastResponse.audio" type="audio/mp3">
                 Your browser does not support the audio tag.
             </audio>
-            <!-- <audio class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
-                    hover:bg-hoverColor duration-300" [attr.src]="podcastResponse.audio" controls></audio> -->
         </div>
-        <p class="text-white text-[8]">
-            {{ podcastResponse.desc }}
-        </p>
-
-
-
-        <!-- <button class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
-                    hover:bg-hoverColor duration-300" >Play</button> -->
+        
     </div>
 </div>
 <app-footer></app-footer>

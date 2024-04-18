@@ -17,6 +17,7 @@ import { CreateBigeventComponent } from './components/main/dashboard/bigevent/cr
 import { CreateZeInsideComponent } from './components/main/dashboard/ze-inside/create-ze-inside/create-ze-inside.component';
 import { ZeA1Component } from './components/main/ze-a1/ze-a1.component';
 import { BigeventComponent } from './components/main/bigevent/bigevent.component';
+import { ContentComponent } from './components/main/content/content.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/ze-ai', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'bigevent', component: BigeventComponent},
   { path: 'contact', component: ContactUsComponent },
   { path: 'podcast', component: PodcastComponent },
+  { path: 'content', component: ContentComponent},
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard', component: DashboardComponent, canActivateChild:[authGuard], children: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PodcastResponse } from 'src/app/Class/PodcastResponse';
 import { PodcastService } from 'src/app/service/podcast.service';
 
@@ -14,7 +15,7 @@ export class PodcastComponent implements OnInit {
   showFullContent: boolean = false;
 
 
-  constructor(private podcastService: PodcastService) {}
+  constructor(private podcastService: PodcastService, private route: Router) {}
 
   ngOnInit() {
     this.getPodcast();
@@ -40,4 +41,11 @@ export class PodcastComponent implements OnInit {
       }
     );
   }
+
+  openAgency(agencyName:any){
+    console.log(agencyName);
+    this.podcastService.sendPodcast(agencyName);
+    this.route.navigate(['/content'])
+  }
+
 }

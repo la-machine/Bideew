@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PodcastService } from 'src/app/service/podcast.service';
 
 @Component({
   selector: 'app-content',
@@ -7,14 +8,13 @@ import { Component } from '@angular/core';
 })
 export class ContentComponent {
 
-  componentToShow: string = "ze-a1";
-  // activeLink: string = '';
+  podcastResponse: any;
+  showFullContent: boolean = false;
 
-  constructor(){}
+  constructor(private podcastService: PodcastService){}
 
-  showComponent(componentToShow: string): void {
-    // this.activeLink = componentToShow;
-    this.componentToShow = componentToShow;
+  getDetails(){
+    this.podcastResponse = this.podcastService.loadPodcast();
   }
 
 }

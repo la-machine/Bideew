@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 import { UserService } from './user.service';
 import { PodcastResponse } from '../Class/PodcastResponse';
 import { PodcastRequest } from '../Class/PodcastRequest';
@@ -11,6 +11,10 @@ import { PodcastRequest } from '../Class/PodcastRequest';
 export class PodcastService {
 
   private apiUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/user'
+
+  podcast:any=[];
+
+  sendData : BehaviorSubject<any> = new BehaviorSubject<any>(this.podcast);
 
   constructor(private http: HttpClient, private userservice: UserService) { }
 
@@ -56,6 +60,14 @@ export class PodcastService {
   deletePodcast(podcastTitle: string): Observable<void> {
     console.log('Deleting podcast:', podcastTitle);
     return this.http.delete<any>(`${this.apiUrl}/delete/${podcastTitle}`);
+  }
+
+  sendPodcast(podcast:any){
+    this.sendData.next(podcast);
+  }
+
+  loadPodcast(){
+    return this.sendData.asObservable();
   }
 
 }

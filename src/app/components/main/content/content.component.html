@@ -1,15 +1,30 @@
-<app-header
-    (zeA1)="showComponent('ze-a1')"
-    (theInside)="showComponent('the-inside')"
-    (bigEvents)="showComponent('bigevent')"
-    (podcast)="showComponent('podcast')"
-    (contactusEvent)="showComponent('contactus')"
-    (flashBack)="showComponent('flash-back')"></app-header>
-    <app-the-inside *ngIf="componentToShow == 'the-inside'"></app-the-inside>
-    <app-bigevent *ngIf="componentToShow == 'bigevent'"></app-bigevent>
-    <app-ze-a1 *ngIf="componentToShow == 'ze-a1'" (contactusEvent)="showComponent('contactus')"></app-ze-a1>
-    <app-podcast *ngIf="componentToShow == 'podcast'"></app-podcast>
-    <app-flash-back *ngIf="componentToShow == 'flash-back'"></app-flash-back>
-    <app-contact-us *ngIf="componentToShow == 'contactus'"></app-contact-us>
+<app-header></app-header>
+<div class="w-full bg- rounded-lg p-7 flex flex-col justify-center gap-6 hover:translate-y-2 transition-transform duration-300 group"
+    style="background-color: rgba(66, 66, 66, 0.6); min-height: fit-content;">
+    <div class="h-fit m-auto">
+        <!-- <img class="mx-auto h-1/2" src="../../../../assets/img/transfer.png"/> -->
+        <img class="mx-auto h-1/2" [src]="podcastResponse.img" />
+        <h3 class="text-bodycolor items-center text-2xl font-semibold">{{ podcastResponse.title }}</h3>
+        <div class="audio-container">
+            <audio controls class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                        hover:bg-hoverColor duration-300">
+                <source [src]="podcastResponse.audio" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+            <!-- <audio class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                    hover:bg-hoverColor duration-300" [attr.src]="podcastResponse.audio" controls></audio> -->
+        </div>
+        <p class="text-white text-[8]">
+            {{ showFullContent ? podcastResponse.desc : (podcastResponse.desc.length > 100 ? (podcastResponse.desc |
+            slice:0:100) + '...' : podcastResponse.desc) }}
+            <span *ngIf="podcastResponse.desc.length > 100 && !showFullContent" (click)="showFullContent = true"
+                style="cursor: pointer; color: blue;">Read more</span>
+        </p>
 
+
+
+        <!-- <button class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                    hover:bg-hoverColor duration-300" >Play</button> -->
+    </div>
+</div>
 <app-footer></app-footer>

@@ -33,8 +33,9 @@ export class ZeA1Component implements OnInit{
         }))
         let latestTicketId = 0;
         this.podcastResponses.forEach(podcast => {
-          console.log(" \n === loading last podcast === \n")
+          
           if (podcast.id>latestTicketId) {
+            console.log(" \n === loading last podcast === \n")
             this.latestPodcast=podcast;
             console.log("testing loop"+ podcast.desc);
             latestTicketId = podcast.id;

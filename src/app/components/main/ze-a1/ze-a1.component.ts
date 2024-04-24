@@ -18,7 +18,7 @@ export class ZeA1Component implements OnInit{
 
   ngOnInit(){
     this.getPodcast();
-    console.log("displaying the last podcast " + this.latestPodcast)
+    console.log("displaying the last podcast " + this.latestPodcast.desc)
   }
 
   getPodcast() {
@@ -33,8 +33,10 @@ export class ZeA1Component implements OnInit{
         }))
         let latestTicketId = 0;
         this.podcastResponses.forEach(podcast => {
+          console.log("testing loop before condition \n"+ podcast.desc);
           if (podcast.evenType==="Podcast" && podcast.id>latestTicketId) {
             this.latestPodcast=podcast;
+            console.log("testing loop"+ podcast.desc);
             latestTicketId = podcast.id;
           }
           console.log(podcast.audio);

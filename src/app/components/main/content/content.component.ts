@@ -18,8 +18,9 @@ export class ContentComponent implements OnInit{
   }
 
   getDetails(){
-    this.podcastService.loadPodcast().subscribe(res => {
+    this.podcastService.loadPodcast().pipe().subscribe(res => {
       this.podcastResponse = res;
+      console.log(res.desc);
     });
   }
 

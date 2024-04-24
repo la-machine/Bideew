@@ -33,12 +33,13 @@ export class ZeA1Component implements OnInit{
         }))
         let latestTicketId = 0;
         this.podcastResponses.forEach(podcast => {
-          console.log("testing loop before condition \n"+ podcast.desc);
+          
           if (podcast.evenType==="Podcast" && podcast.id>latestTicketId) {
             this.latestPodcast=podcast;
             console.log("testing loop"+ podcast.desc);
             latestTicketId = podcast.id;
           }
+          console.log("testing loop before condition \n"+ podcast.desc);
           console.log(podcast.audio);
           console.log("image ", podcast.img);
         });

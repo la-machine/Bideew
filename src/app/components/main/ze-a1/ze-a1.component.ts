@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { PodcastService } from 'src/app/service/podcast.service';
 
 const fileUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/files'
@@ -11,8 +12,9 @@ const fileUrl = 'https://bideew-2e4c9e77133a.herokuapp.com/api/files'
 export class ZeA1Component implements OnInit{
   podcastResponses: any[] = [];
   latestPodcast:any;
+  showFullContent: boolean = false;
 
-  constructor(private podcastService: PodcastService) { }
+  constructor(private podcastService: PodcastService, private route: Router) { }
 
   ngOnInit(){
     this.getPodcast();
@@ -44,6 +46,12 @@ export class ZeA1Component implements OnInit{
         // Handle error, e.g., show an error message or log
       }
     );
+  }
+
+  openAgency(agencyName:any){
+    console.log(agencyName);
+    this.podcastService.sendPodcast(agencyName);
+    this.route.navigate(['/content'])
   }
 
 }

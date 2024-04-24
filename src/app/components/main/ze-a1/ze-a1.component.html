@@ -60,13 +60,23 @@ style="background-image: url('../../../../assets/img/outils-sport.avif'); height
         <div class="w-full h-81 bg- rounded-lg p-7 flex flex-col justify-center gap-6 hover:translate-y-2 transition-transform duration-300 group"
         style="background-color: rgba(66, 66, 66, 0.6)">
             <div class="h-fit m-auto">
-                <img class="m-auto h-1/2" src="../../../../assets/img/Edit-podcast.jpeg"/>
-                <h3 class="mt-3 text-bodycolor items-center text-2xl font-semibold">Podcast</h3>
-                <p class="mt-2 text-white text-[8]">Come and podcast on the 
-                    matches reviews and 
-                    interviews
+                <!-- <img class="mx-auto h-1/2" src="../../../../assets/img/transfer.png"/> -->
+                <img class="mx-auto h-1/2" [src]="latestPodcast.img"/>
+                <h3 class="text-bodycolor items-center text-2xl font-semibold">{{ latestPodcast.title }}</h3>
+                <div class="audio-container">
+                    <audio controls class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                        hover:bg-hoverColor duration-300">
+                        <source [src]="latestPodcast.audio" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <!-- <audio class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
+                    hover:bg-hoverColor duration-300" [attr.src]="latestPodcast.audio" controls></audio> -->
+                </div>
+                <p class="text-white text-[8]">
+                    {{ showFullContent ? latestPodcast.desc : (latestPodcast.desc.length > 100 ? (latestPodcast.desc | slice:0:100) + '...' : latestPodcast.desc) }}
+                    <span *ngIf="latestPodcast.desc.length > 100 && !showFullContent" (click)="openAgency(latestPodcast)" class="text-textBlue">Read more</span>
                 </p>
-                <div class="text-left text-orange-600 font-medium mt-3"><a href="">Read More</a></div>
+                
             </div>
         </div>
     </div>

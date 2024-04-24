@@ -3,9 +3,9 @@
     <img class="m-auto h-1/4 w-1/4"  src="../../../../assets/img/Edit-podcast.jpeg" />
     <h1 class=" mt-10 font-titleFont text-textBlue text-3xl font-semibold flex justify-center items-center"> PODCASTS</h1>
     <div class="grid grid-cols-1 min-h-fit md:grid-cols-2 xl:grid-cols-3 lgl:grid-cols-3 gap-4 mt-10 lgl:px-10">
-        <div *ngFor="let podcastResponse of podcastResponses" class="w-full min-h-fit bg- rounded-lg p-7 flex flex-col justify-center gap-6 hover:translate-y-2 transition-transform duration-300 group"
+        <div class="w-full h-87 bg- rounded-lg p-7 flex flex-col justify-center gap-6 hover:translate-y-2 transition-transform duration-300 group"
         style="background-color: rgba(66, 66, 66, 0.6);">
-            <div class="h-fit m-auto">
+            <div *ngFor="let podcastResponse of podcastResponses" class="h-fit m-auto">
                 <!-- <img class="mx-auto h-1/2" src="../../../../assets/img/transfer.png"/> -->
                 <img class="mx-auto h-1/2" [src]="podcastResponse.img"/>
                 <h3 class="text-bodycolor items-center text-2xl font-semibold">{{ podcastResponse.title }}</h3>

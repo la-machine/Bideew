@@ -74,8 +74,8 @@ style="background-image: url('../../../../assets/img/outils-sport.avif'); height
                 </div>
                 <p class="text-white text-[8]">
                     {{ showFullContent ? latestPodcast.desc : (latestPodcast.desc.length > 100 ? (latestPodcast.desc | slice:0:100) + '...' : latestPodcast.desc) }}
-                    <span *ngIf="latestPodcast.desc.length > 100 && !showFullContent" (click)="openAgency(latestPodcast)" class="text-textBlue">Read more</span>
                 </p>
+                <div *ngIf="latestPodcast.desc.length > 100 && !showFullContent" (click)="openAgency(latestPodcast)" class="text-left text-orange-600 font-medium mt-3"><a href="">Read More</a></div>
                 
             </div>
         </div>

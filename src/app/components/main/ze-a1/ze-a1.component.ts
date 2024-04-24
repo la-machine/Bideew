@@ -33,14 +33,14 @@ export class ZeA1Component implements OnInit{
         }))
         let latestTicketId = 0;
         this.podcastResponses.forEach(podcast => {
-          
-          if (podcast.evenType==="Podcast" && podcast.id>latestTicketId) {
+          console.log(" \n === loading last podcast === \n")
+          if (podcast.id>latestTicketId) {
             this.latestPodcast=podcast;
             console.log("testing loop"+ podcast.desc);
             latestTicketId = podcast.id;
           }
           console.log("testing loop before condition \n"+ podcast.desc);
-          console.log(podcast.audio);
+          console.log(podcast.id);
           console.log("image ", podcast.img);
         });
       },

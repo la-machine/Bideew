@@ -18,6 +18,7 @@ import { CreateZeInsideComponent } from './components/main/dashboard/ze-inside/c
 import { ZeA1Component } from './components/main/ze-a1/ze-a1.component';
 import { BigeventComponent } from './components/main/bigevent/bigevent.component';
 import { ContentComponent } from './components/main/content/content.component';
+import { Zea1Component } from './components/main/dashboard/zea1/zea1.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/ze-ai', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
       { path: 'create-podcast', component: CreatePodcastComponent },
       { path: 'edit-podcast/:title', component: EditPodcastComponent },
       { path: 'index-zeinside', component: IndexZeInsideComponent },
+      { path: 'add-zea1', component: Zea1Component},
       { path: 'add-zeinside', component: CreateZeInsideComponent },
       { path: 'index-bigevent', component: IndexBigeventComponent },
       { path: 'add-bigevent', component: CreateBigeventComponent },

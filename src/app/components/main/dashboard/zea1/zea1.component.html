@@ -1,0 +1,43 @@
+<app-sidbar></app-sidbar>
+<div class="p-4 sm:ml-64">
+    <div class="p-4 rounded-lg mt-14">
+        <div class="container mx-auto mt-5">
+            <form (submit)="submitForm()" #interviewForm="ngForm" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 
+                    focus:z-10 focus:border-indigo-500 focus:outline-none "
+                    type="text" id="title" name="title" [(ngModel)]="title" required>
+                </div>
+
+            <!-- File Inputs for Images, Audio, and Video -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <label for="img" class="block text-sm font-medium text-gray-700">ZeA1 Image</label>
+                        <input class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 
+                        focus:z-10 focus:border-indigo-500 focus:outline-none " 
+                        type="file" id="img" name="img" accept="image/*" (change)="onImageSelected($event)" required>
+                    </div>
+                
+                </div>
+            
+            <!-- Title and Description -->
+            
+        
+                <div class="mb-4">
+                    <label for="desc" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea class="relative block w-full h-screen appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 
+                    focus:z-10 focus:border-indigo-500 focus:outline-none "
+                    id="desc" name="desc" [(ngModel)]="desc" required></textarea>
+                </div>
+        
+            <!-- Submit Button -->
+                <div class="mt-4">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <app-header></app-header> -->

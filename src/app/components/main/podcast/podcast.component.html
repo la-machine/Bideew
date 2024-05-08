@@ -18,7 +18,7 @@
                     <!-- <audio class="px-4 py-2 rounded-md text-textBlue text-[13] border border-textGreen
                     hover:bg-hoverColor duration-300" [attr.src]="podcastResponse.audio" controls></audio> -->
                 </div>
-                <p class="text-white text-[8]">
+                <p class="text-black text-[8]">
                     {{ showFullContent ? podcastResponse.desc : (podcastResponse.desc.length > 100 ? (podcastResponse.desc | slice:0:100) + '...' : podcastResponse.desc) }}
                     <span *ngIf="podcastResponse.desc.length > 100 && !showFullContent" (click)="openAgency(podcastResponse)" class="text-textBlue">Read more</span>
                 </p>

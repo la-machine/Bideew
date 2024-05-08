@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './dashboard.component';
 import { EditPodcastComponent } from './podcast/edit-podcast/edit-podcast.component';
 import { ConfirmationmodalComponent } from './confirmationmodal/confirmationmodal.component';
+import { Zea1Component } from './zea1/zea1.component';
 
 
 
@@ -30,7 +31,8 @@ import { ConfirmationmodalComponent } from './confirmationmodal/confirmationmoda
     DashboardComponent,
     DashbordContentComponent,
     EditPodcastComponent,
-    ConfirmationmodalComponent
+    ConfirmationmodalComponent,
+    Zea1Component
   ],
   imports: [
     CommonModule,

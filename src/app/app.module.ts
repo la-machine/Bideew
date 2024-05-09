@@ -18,7 +18,6 @@ import { DataTablesModule } from 'angular-datatables';
 import { DashboardModule } from './components/main/dashboard/dashboard.module';
 import { BigeventComponent } from './components/main/bigevent/bigevent.component';
 import { TimeoutInterceptor } from './service/timeoutInterceptor';
-import { Zea1Component } from './components/dashboard/zea1/zea1.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { Zea1Component } from './components/dashboard/zea1/zea1.component';
     LoginComponent,
     UserModalComponent,
     BigeventComponent,
-    Zea1Component,
   ],
   imports: [
     BrowserModule,

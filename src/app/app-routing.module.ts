@@ -21,7 +21,7 @@ import { ContentComponent } from './components/main/content/content.component';
 import { Zea1Component } from './components/main/dashboard/zea1/zea1.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/ze-ai', pathMatch: 'full' },
+  { path: '', redirectTo: '/ze-a1', pathMatch: 'full' },
   { path: 'ze-a1', component: ZeA1Component },
   { path: 'the-inside', component: TheInsideComponent },
   { path: 'flashBack', component: FlashBackComponent },

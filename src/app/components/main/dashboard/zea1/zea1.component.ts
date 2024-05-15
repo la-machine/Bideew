@@ -10,31 +10,21 @@ import { Zea1Service } from 'src/app/service/zea1.service';
 export class Zea1Component {
 
   imageFile: File | null = null;
-  audioFile: File | null = null;
   title!: string;
   desc!: string;
   
   constructor(private zea1Service: Zea1Service, private router : Router) {}
+
   onImageSelected(event: any) {
     this.imageFile = event.target.files[0];
   }
 
-  onAudioSelected(event: any) {
-    this.audioFile = event.target.files[0];
-  }
 
   submitForm() {
-    if (!this.imageFile || !this.audioFile) {
+    if (!this.imageFile) {
       console.error('Please select both an image and an audio file.');
       return;
     }
-    // const formData = new PodcastRequest();
-    // formData.desc=this.desc;
-    // formData.title = this.title;
-    // formData.img= this.imageFile;
-    // formData.audio = this.podcast;
-
-    // console.log(formData);
 
     this.zea1Service.createZEA1(this.title, this.desc, this.imageFile).subscribe(
       response => {

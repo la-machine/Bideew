@@ -26,7 +26,7 @@ export class Zea1Service {
 
     // console.log(formData);
 
-    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/zea1', formData, httpOptions).pipe(
+    return this.http.post('https://bideew-2e4c9e77133a.herokuapp.com/api/zea1/add', formData, httpOptions).pipe(
       catchError((error) => {
         return throwError('Invalid credentials'); // Set your custom error message
       })
